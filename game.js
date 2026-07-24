@@ -143,6 +143,18 @@
     scatterEl.innerHTML = "";
   }
 
+  function showCompletedPreview() {
+    clearPlaced();
+    for (const tile of CASCADE_TILES) {
+      const slot = slotsEl.querySelector(`.slot[data-slot-id="${tile.id}"]`);
+      if (!slot) continue;
+      slot.classList.add("filled");
+      slot.appendChild(createTileElement(tile, { locked: true }));
+      state.placed.add(tile.id);
+    }
+    updateProgress();
+  }
+
   function scatterTiles(tiles) {
     scatterEl.innerHTML = "";
     const sheetRect = sheetEl.getBoundingClientRect();
@@ -480,17 +492,16 @@
     state.placed = new Set();
     state.drag = null;
     stopTimer();
-    clearPlaced();
     sheetEl.classList.add("is-idle");
     sheetEl.classList.remove("is-complete");
+    showCompletedPreview();
     timerDisplay.textContent = formatTime(0);
     compareNote.hidden = true;
     compareNote.textContent = "";
     startBtn.disabled = false;
     startBtn.textContent = "Start";
     startBtn.classList.add("pulse");
-    hintEl.textContent = "Press Start — tiles scatter over the answer sheet.";
-    updateProgress();
+    hintEl.textContent = "Study the completed cascade, then press Start to scramble and play.";
     adviceModal.hidden = true;
   }
 

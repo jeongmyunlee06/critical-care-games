@@ -295,42 +295,14 @@ body {
   overflow: hidden;
 }
 
-.sheet.is-idle .connectors,
-.sheet.is-idle .path-label,
-.sheet.is-idle .slots,
 .sheet.is-idle .scatter {
   visibility: hidden !important;
-  opacity: 0 !important;
   pointer-events: none !important;
 }
 
-.idle-prompt {
-  display: none;
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  place-items: center;
-  align-content: center;
-  text-align: center;
-  padding: 1rem;
+.sheet.is-idle .slot .tile {
   pointer-events: none;
-}
-
-.sheet.is-idle .idle-prompt {
-  display: grid;
-}
-
-.idle-title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  color: var(--ink);
-}
-
-.idle-copy {
-  margin: 0.4rem 0 0;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
+  cursor: default;
 }
 
 .connectors {

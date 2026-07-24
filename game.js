@@ -146,11 +146,11 @@
   function scatterTiles(tiles) {
     scatterEl.innerHTML = "";
     const sheetRect = sheetEl.getBoundingClientRect();
-    const columnCount = Math.max(2, Math.floor(sheetRect.width / 140));
+    const columnCount = Math.max(2, Math.floor(sheetRect.width / 180));
     const rowCount = Math.ceil(tiles.length / columnCount);
     const cellWidth = sheetRect.width / columnCount;
     const cellHeight = sheetRect.height / rowCount;
-    const gap = 5;
+    const gap = 6;
 
     tiles.forEach((tile, index) => {
       const el = createTileElement(tile, { scattered: true });

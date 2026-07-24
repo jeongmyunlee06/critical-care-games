@@ -363,7 +363,7 @@ body {
 .path-label {
   position: absolute;
   z-index: 1;
-  font-size: clamp(0.55rem, 1.1vw, 0.72rem);
+  font-size: clamp(0.82rem, 1.65vw, 1.08rem);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -505,10 +505,10 @@ body {
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 7px;
-  padding: 0.12rem 0.25rem;
+  border-radius: 10px;
+  padding: 0.18rem 0.38rem;
   font-family: var(--font-body);
-  font-size: clamp(0.48rem, 0.95vw, 0.68rem);
+  font-size: clamp(0.72rem, 1.425vw, 1.02rem);
   font-weight: 700;
   line-height: 1.1;
   color: #fff;
@@ -526,11 +526,11 @@ body {
   z-index: 3;
   width: auto;
   height: auto;
-  min-width: 3.6rem;
-  max-width: 7.2rem;
-  min-height: 1.35rem;
-  padding: 0.18rem 0.32rem;
-  font-size: clamp(0.45rem, 0.85vw, 0.62rem);
+  min-width: 5.4rem;
+  max-width: 10.8rem;
+  min-height: 2rem;
+  padding: 0.27rem 0.48rem;
+  font-size: clamp(0.68rem, 1.275vw, 0.93rem);
 }
 
 .tile.dragging {
@@ -564,18 +564,18 @@ body {
 
 .tile.kind-cofactor-sm {
   background: linear-gradient(160deg, #8b6bb8, #6b4f96);
-  font-size: clamp(0.42rem, 0.8vw, 0.58rem);
+  font-size: clamp(0.63rem, 1.2vw, 0.87rem);
 }
 
 .tile.kind-cofactor-dot {
   background: linear-gradient(160deg, #8b6bb8, #6b4f96);
   border-radius: 50%;
   aspect-ratio: 1;
-  min-width: 1.55rem;
-  max-width: 2rem;
-  min-height: 1.55rem;
-  padding: 0.1rem;
-  font-size: clamp(0.42rem, 0.85vw, 0.58rem);
+  min-width: 2.3rem;
+  max-width: 3rem;
+  min-height: 2.3rem;
+  padding: 0.15rem;
+  font-size: clamp(0.63rem, 1.275vw, 0.87rem);
 }
 
 .tile.kind-complex {
@@ -608,8 +608,8 @@ body {
     16% 12%,
     38% 18%
   );
-  min-height: 2rem;
-  padding: 0.35rem 0.55rem;
+  min-height: 3rem;
+  padding: 0.52rem 0.82rem;
 }
 
 .hint {
@@ -715,8 +715,8 @@ body {
   }
 
   .tile.scattered {
-    min-width: 3.4rem;
-    max-width: 6.5rem;
-    font-size: 0.52rem;
+    min-width: 5.1rem;
+    max-width: 9.75rem;
+    font-size: 0.78rem;
   }
 }

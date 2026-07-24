@@ -15,20 +15,20 @@ const CASCADE_TILES = [
   { id: "ca-ext", label: "Ca²⁺", kind: "cofactor-dot", group: "ca", pathway: "extrinsic", x: 12.5, y: 22.2, w: 7.5, h: 7.5 },
   { id: "vii-iii", label: "VII – III complex", kind: "inactive", pathway: "extrinsic", x: 21.5, y: 22.8, w: 20.25, h: 6.3 },
 
-  // Intrinsic upper (activated left, inactive right — arrows still XII→XIIa, etc.)
-  { id: "xii", label: "XII", kind: "inactive", pathway: "intrinsic", x: 86.5, y: 14.9, w: 11.25, h: 6.3 },
+  // Intrinsic upper: activated left, inactive right (XII→XIIa, XI→XIa, IX→IXa)
   { id: "xiia", label: "XIIa", kind: "active", pathway: "intrinsic", x: 73.5, y: 14.9, w: 11.25, h: 6.3 },
-  { id: "xi", label: "XI", kind: "inactive", pathway: "intrinsic", x: 86.5, y: 22.2, w: 11.25, h: 6.3 },
+  { id: "xii", label: "XII", kind: "inactive", pathway: "intrinsic", x: 86.5, y: 14.9, w: 11.25, h: 6.3 },
   { id: "xia", label: "XIa", kind: "active", pathway: "intrinsic", x: 73.5, y: 22.2, w: 11.25, h: 6.3 },
+  { id: "xi", label: "XI", kind: "inactive", pathway: "intrinsic", x: 86.5, y: 22.2, w: 11.25, h: 6.3 },
   { id: "hmw", label: "HMW kininogen", kind: "cofactor-sm", pathway: "intrinsic", x: 60.5, y: 22.5, w: 10.8, h: 5.4 },
-  { id: "ix", label: "IX", kind: "inactive", pathway: "intrinsic", x: 86.5, y: 30.2, w: 11.25, h: 6.3 },
   { id: "ixa", label: "IXa", kind: "active", pathway: "intrinsic", x: 73.5, y: 30.2, w: 11.25, h: 6.3 },
-  { id: "ca-ix", label: "Ca²⁺", kind: "cofactor-dot", group: "ca", pathway: "intrinsic", x: 64.5, y: 30.5, w: 7.5, h: 7.5 },
+  { id: "ix", label: "IX", kind: "inactive", pathway: "intrinsic", x: 86.5, y: 30.2, w: 11.25, h: 6.3 },
+  { id: "ca-ix", label: "Ca²⁺", kind: "cofactor-dot", group: "ca", pathway: "intrinsic", x: 55, y: 30.5, w: 7.5, h: 7.5 },
 
-  // Intrinsic lower / tenase
-  { id: "thrombin-loop", label: "Thrombin", kind: "cofactor-sm", pathway: "intrinsic", x: 54.5, y: 36.8, w: 9.75, h: 5.25 },
-  { id: "viii", label: "VIII", kind: "cofactor", pathway: "intrinsic", x: 65.5, y: 37.5, w: 10.5, h: 6.3 },
-  { id: "viiia", label: "VIIIa", kind: "active", pathway: "intrinsic", x: 77, y: 37.5, w: 11.25, h: 6.3 },
+  // Intrinsic lower / tenase (activated left, inactive right)
+  { id: "thrombin-loop", label: "Thrombin", kind: "cofactor-sm", pathway: "intrinsic", x: 60.5, y: 38.5, w: 9.75, h: 5.25 },
+  { id: "viiia", label: "VIIIa", kind: "active", pathway: "intrinsic", x: 73.5, y: 38.5, w: 11.25, h: 6.3 },
+  { id: "viii", label: "VIII", kind: "cofactor", pathway: "intrinsic", x: 86.5, y: 38.5, w: 10.5, h: 6.3 },
   { id: "platelet-pl", label: "Platelet phospholipids", kind: "pl", pathway: "intrinsic", x: 79, y: 44.8, w: 20.25, h: 6.3 },
   { id: "factor-x-activator", label: "Factor X activator complex", kind: "complex", pathway: "intrinsic", x: 62, y: 52.2, w: 36, h: 7.2 },
 
@@ -68,12 +68,12 @@ const CASCADE_ARROWS = [
   { d: "M660 182 L735 182", type: "cofactor" },
   { d: "M680 247 L735 247", type: "cofactor" },
 
-  { d: "M705 295 L760 295", type: "main" },
-  { d: "M595 285 L705 285 L705 295", type: "cofactor" },
-  { d: "M790 295 L790 330 L825 330", type: "main" },
-  { d: "M825 295 L825 330", type: "main" },
-  { d: "M890 345 L890 360 L825 360", type: "main" },
-  { d: "M890 345 L980 345 L980 148 L920 148", type: "cofactor" },
+  { d: "M920 300 L790 300", type: "main" },
+  { d: "M655 295 L790 295 L790 300", type: "cofactor" },
+  { d: "M790 320 L790 360 L825 360", type: "main" },
+  { d: "M825 320 L825 360", type: "main" },
+  { d: "M890 370 L890 385 L825 385", type: "main" },
+  { d: "M890 370 L980 370 L980 148 L920 148", type: "cofactor" },
 
   { d: "M500 265 L500 295", type: "main" },
   { d: "M800 400 L650 400 L650 250 L500 250", type: "main" },

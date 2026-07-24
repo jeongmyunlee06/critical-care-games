@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Critical Care — Coagulation Cascade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">CC</span>
+        <div>
+          <p class="brand-name">Critical Care</p>
+          <p class="brand-sub">Coagulation Cascade</p>
+        </div>
+      </div>
+
+      <button id="startBtn" class="start-btn" type="button">Start</button>
+
+      <div class="hud">
+        <div class="progress-row">
+          <div class="progress-track">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <span id="progressText">0 / 0</span>
+        </div>
+        <aside class="records" aria-label="Time records">
+          <div class="record-block">
+            <span class="record-label">Time</span>
+            <span id="timerDisplay" class="record-value">00:00.0</span>
+          </div>
+          <div class="record-block">
+            <span class="record-label">Best</span>
+            <span id="bestDisplay" class="record-value muted">—</span>
+          </div>
+          <div id="compareNote" class="compare-note" hidden></div>
+        </aside>
+      </div>
+    </header>
+
+    <main class="stage">
+      <div id="sheet" class="sheet is-idle" aria-label="Cascade answer sheet">
+        <div id="idlePrompt" class="idle-prompt">
+          <p class="idle-title">Coagulation Cascade</p>
+          <p class="idle-copy">Press Start to scatter the tiles and begin.</p>
+        </div>
+        <svg id="connectors" class="connectors" viewBox="0 0 1000 720" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="path-label extrinsic">Extrinsic Pathway</div>
+        <div class="path-label intrinsic">Intrinsic Pathway</div>
+        <div class="path-label common">Common Pathway</div>
+        <div id="slots" class="slots"></div>
+        <div id="scatter" class="scatter" aria-label="Scattered tiles"></div>
+      </div>
+      <p id="hint" class="hint">Press Start — tiles scatter over the answer sheet.</p>
+    </main>
+
+    <div id="adviceModal" class="modal" hidden>
+      <div class="modal-card" role="dialog" aria-labelledby="adviceTitle">
+        <p class="modal-kicker">Run complete</p>
+        <h2 id="adviceTitle">Cascade assembled</h2>
+        <p id="finalTime" class="final-time"></p>
+        <p id="compareFinal" class="compare-final"></p>
+        <div id="adviceBody" class="advice-body"></div>
+        <div class="modal-actions">
+          <button id="playAgainBtn" class="start-btn" type="button">Play again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

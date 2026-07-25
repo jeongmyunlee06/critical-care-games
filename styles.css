@@ -297,18 +297,31 @@ body {
   overflow: hidden;
 }
 
-.preview-banner {
+.study-page {
   display: none;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(214, 236, 240, 0.85), transparent 70%),
+    linear-gradient(180deg, #f7fbfc 0%, #eef5f7 100%);
+  z-index: 6;
+}
+
+.sheet.is-idle .study-page {
+  display: flex;
+}
+
+.sheet.is-idle .board-body {
+  display: none;
+}
+
+.study-banner {
   flex-shrink: 0;
   text-align: center;
   padding: 0.55rem 0.75rem 0.35rem;
   border-bottom: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.72);
-  z-index: 5;
-}
-
-.sheet.is-idle .preview-banner {
-  display: block;
 }
 
 .preview-title {
@@ -326,6 +339,25 @@ body {
   color: var(--ink-soft);
 }
 
+.study-figure {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.75rem 0.65rem;
+}
+
+.study-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .board-body {
   position: relative;
   flex: 1;
@@ -335,11 +367,6 @@ body {
 .sheet.is-idle .scatter {
   visibility: hidden !important;
   pointer-events: none !important;
-}
-
-.sheet.is-idle .slot .tile {
-  pointer-events: none;
-  cursor: default;
 }
 
 .connectors {

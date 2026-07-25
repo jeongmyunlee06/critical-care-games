@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=12" />
+    <link rel="stylesheet" href="styles.css?v=13" />
   </head>
   <body>
     <div class="atmosphere" aria-hidden="true"></div>
@@ -54,10 +54,19 @@
 
     <main class="stage">
       <div id="sheet" class="sheet is-idle" aria-label="Cascade answer sheet">
-        <div id="previewBanner" class="preview-banner">
-          <p class="preview-title">Coagulation Cascade</p>
-          <p class="preview-copy">Study the completed algorithm, then press Start to scramble and play.</p>
-        </div>
+        <section id="studyPage" class="study-page" aria-label="Study the coagulation cascade">
+          <div class="study-banner">
+            <p class="preview-title">Coagulation Cascade</p>
+            <p class="preview-copy">Study this algorithm, then press Start to scramble and rebuild it.</p>
+          </div>
+          <figure class="study-figure">
+            <img
+              class="study-image"
+              src="assets/coagulation-cascade-study.png"
+              alt="Coagulation cascade flowchart showing extrinsic, intrinsic, and common pathways from injury to fibrin cross-linking"
+            />
+          </figure>
+        </section>
         <div id="boardBody" class="board-body">
           <svg
             id="connectors"
@@ -73,7 +82,7 @@
           <div id="scatter" class="scatter" aria-label="Scattered tiles"></div>
         </div>
       </div>
-      <p id="hint" class="hint">Study the completed cascade, then press Start to scramble and play.</p>
+      <p id="hint" class="hint">Study the cascade diagram, then press Start to scramble and play.</p>
     </main>
 
     <div id="adviceModal" class="modal" hidden>

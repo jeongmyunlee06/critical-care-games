@@ -1,5 +1,6 @@
 (() => {
   const sheetEl = document.getElementById("sheet");
+  const boardBodyEl = document.getElementById("boardBody");
   const slotsEl = document.getElementById("slots");
   const scatterEl = document.getElementById("scatter");
   const connectorsEl = document.getElementById("connectors");
@@ -157,11 +158,11 @@
 
   function scatterTiles(tiles) {
     scatterEl.innerHTML = "";
-    const sheetRect = sheetEl.getBoundingClientRect();
-    const columnCount = Math.max(2, Math.floor(sheetRect.width / 180));
+    const boardRect = boardBodyEl.getBoundingClientRect();
+    const columnCount = Math.max(2, Math.floor(boardRect.width / 180));
     const rowCount = Math.ceil(tiles.length / columnCount);
-    const cellWidth = sheetRect.width / columnCount;
-    const cellHeight = sheetRect.height / rowCount;
+    const cellWidth = boardRect.width / columnCount;
+    const cellHeight = boardRect.height / rowCount;
     const gap = 6;
 
     tiles.forEach((tile, index) => {
@@ -249,15 +250,15 @@
     el.setPointerCapture(e.pointerId);
 
     const rect = el.getBoundingClientRect();
-    const sheetRect = sheetEl.getBoundingClientRect();
+    const boardRect = boardBodyEl.getBoundingClientRect();
 
     state.drag = {
       el,
       tileId: el.dataset.tileId,
       offsetX: e.clientX - rect.left,
       offsetY: e.clientY - rect.top,
-      originLeft: parseFloat(el.style.left) || rect.left - sheetRect.left,
-      originTop: parseFloat(el.style.top) || rect.top - sheetRect.top,
+      originLeft: parseFloat(el.style.left) || rect.left - boardRect.left,
+      originTop: parseFloat(el.style.top) || rect.top - boardRect.top,
       pointerId: e.pointerId,
     };
 
@@ -273,13 +274,13 @@
     const drag = state.drag;
     if (!drag || drag.pointerId !== e.pointerId) return;
 
-    const sheetRect = sheetEl.getBoundingClientRect();
+    const boardRect = boardBodyEl.getBoundingClientRect();
     const tw = drag.el.offsetWidth;
     const th = drag.el.offsetHeight;
-    let x = e.clientX - sheetRect.left - drag.offsetX;
-    let y = e.clientY - sheetRect.top - drag.offsetY;
-    x = Math.max(0, Math.min(x, sheetRect.width - tw));
-    y = Math.max(0, Math.min(y, sheetRect.height - th));
+    let x = e.clientX - boardRect.left - drag.offsetX;
+    let y = e.clientY - boardRect.top - drag.offsetY;
+    x = Math.max(0, Math.min(x, boardRect.width - tw));
+    y = Math.max(0, Math.min(y, boardRect.height - th));
 
     drag.el.style.left = `${x}px`;
     drag.el.style.top = `${y}px`;
